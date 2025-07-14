@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700);a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #333;
+  color: #fff;
+}
+
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  align-self:center;
+  color: rgba(71,157,175);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(71,157,175,.9);
+  color: rgba(71,157,175,.9);
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+input.error {
+  border-bottom: 1px solid #ff4d4d; /* sharp red for high contrast */
+  color: #ff4d4d;
+}
+
+button {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(71,157,175,.9);
+  border-color: rgba(71,157,175,.9);
+}
+
+.form-error {
+  margin-top: 1rem;
+  color: #ff4d4d; /* sharp red for high contrast */
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pin-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pin-box {
+  width: 4.7rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.pin-error {
+  width: 4.7rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #ff4d4d; /* sharp red for high contrast */
+  color: #ff4d4d;
+}
+
+.pin-box::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.dash {
+  color: white;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0 0.1rem;
+}
