@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Spidr_Project/static/css/main.d23645dc.css",
-    "main.js": "/Spidr_Project/static/js/main.e67a6530.js",
-    "static/js/453.213273e8.chunk.js": "/Spidr_Project/static/js/453.213273e8.chunk.js",
-    "index.html": "/Spidr_Project/index.html",
-    "main.d23645dc.css.map": "/Spidr_Project/static/css/main.d23645dc.css.map",
-    "main.e67a6530.js.map": "/Spidr_Project/static/js/main.e67a6530.js.map",
-    "453.213273e8.chunk.js.map": "/Spidr_Project/static/js/453.213273e8.chunk.js.map"
+    "main.css": "/Spidr-Project/static/css/main.d23645dc.css",
+    "main.js": "/Spidr-Project/static/js/main.4165add2.js",
+    "static/js/453.213273e8.chunk.js": "/Spidr-Project/static/js/453.213273e8.chunk.js",
+    "index.html": "/Spidr-Project/index.html",
+    "main.d23645dc.css.map": "/Spidr-Project/static/css/main.d23645dc.css.map",
+    "main.4165add2.js.map": "/Spidr-Project/static/js/main.4165add2.js.map",
+    "453.213273e8.chunk.js.map": "/Spidr-Project/static/js/453.213273e8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d23645dc.css",
-    "static/js/main.e67a6530.js"
+    "static/js/main.4165add2.js"
   ]
 }
