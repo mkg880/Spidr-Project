@@ -100,10 +100,17 @@ button:hover {
 }
 
 .form-error {
-  margin-top: 1rem;
+  /* margin-top: 0.1rem; */
   color: #ff4d4d; /* sharp red for high contrast */
   font-size: 0.85rem;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-success {
+  margin-top: 0.1rem;
+  color: rgba(71,157,175);
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
 }
 
@@ -126,6 +133,14 @@ button:hover {
   letter-spacing: 0.1em;
   border-bottom: 1px solid #ff4d4d; /* sharp red for high contrast */
   color: #ff4d4d;
+}
+
+.pin-success {
+  width: 4.7rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(71,157,175); /* sharp red for high contrast */
+  color: rgba(71,157,175);
 }
 
 .pin-box::placeholder {

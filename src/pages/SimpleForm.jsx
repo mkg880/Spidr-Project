@@ -7,13 +7,19 @@ const SimpleForm = () => {
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
   const [guess, setGuess] = useState("");
   const [pinParts, setPinParts] = useState(["", "", "", ""]);
   const [pin, setPin] = useState("");
   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showPin, setShowPin] = useState(false);
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const validatePhoneNumber = (phone) => {
+    const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+    return phoneRegex.test(phone);
+  };
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -47,6 +53,11 @@ const SimpleForm = () => {
     e.preventDefault();
     setIsSubmitted(true);
     setError("");
+    setSuccessMessage("");
+    if (!validatePhoneNumber(phoneNumber)) {
+      setError("Please enter a valid phone number in the format xxx-xxx-xxxx.");
+      return;
+    }
     if (!validateEmail(email)) {
       setError("Please enter a valid email address.");
       return;
@@ -56,10 +67,11 @@ const SimpleForm = () => {
         return;
     }
     else if (!firstName || !lastName || !phoneNumber || !guess || !pin) {
-        setError("Please fill out all fields.");
+        setError("Make sure all fields are filled out.");
         return;
     }
     else {
+        setSuccessMessage("Your entry has been recorded successfully! Your information has been printed to the console.");
         console.log(`First Name: ${firstName}, Last Name: ${lastName}, Phone: ${phoneNumber}, Email: ${email}, Guess: $${guess}, Pin: ${pin}`);
     }
   };
@@ -80,6 +92,7 @@ const SimpleForm = () => {
             onChange={(e) => {
                 setIsSubmitted(false);
                 setError("");
+                setSuccessMessage("");
                 setFirstName(e.target.value);
             }}
           />
@@ -97,6 +110,7 @@ const SimpleForm = () => {
                 setLastName(e.target.value);
                 setIsSubmitted(false);
                 setError("");
+                setSuccessMessage("");
             }}
           />
         </div>
@@ -105,7 +119,7 @@ const SimpleForm = () => {
           <label htmlFor="phone">Phone Number (xxx-xxx-xxxx)
           </label>
           <input
-            className={isSubmitted && !phoneNumber ? "error" : ""}
+            className={isSubmitted && !validatePhoneNumber(phoneNumber) ? "error" : ""}
             id="phone"
             type="text"
             placeholder="123-456-7890"
@@ -120,6 +134,7 @@ const SimpleForm = () => {
                 }
                 setIsSubmitted(false);
                 setError("");
+                setSuccessMessage("");
                 setPhoneNumber(formatted);
             }}
           />
@@ -138,6 +153,7 @@ const SimpleForm = () => {
                 setEmail(e.target.value)
                 setIsSubmitted(false);
                 setError("");
+                setSuccessMessage("");
             }}
           />
         </div>
@@ -158,6 +174,7 @@ const SimpleForm = () => {
                 }
                 setIsSubmitted(false);
                 setError("");
+                setSuccessMessage("");
             }}
           />
         </div>
@@ -178,6 +195,7 @@ const SimpleForm = () => {
                     handlePinChange(i, e.target.value);
                     setIsSubmitted(false);
                     setError("");
+                    setSuccessMessage("");
                 }}
                 onKeyDown={(e) => handleKeyDown(e, i)}
                 className={isSubmitted && part.length !== 4 ? "pin-error" : "pin-box"}
@@ -198,6 +216,7 @@ const SimpleForm = () => {
 
         <button type="submit">Submit</button>
         {error && <div className="form-error">{error}</div>}
+        {successMessage && <div className="form-success">{successMessage}</div>}
       </form>
     </div>
   );
